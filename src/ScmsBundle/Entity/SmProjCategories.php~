@@ -1,0 +1,43 @@
+<?php
+
+namespace ScmsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SmProjCategories
+ *
+ * @ORM\Table(name="sm_proj_categories", indexes={@ORM\Index(name="proj_cat_img_id", columns={"proj_cat_img_id"})})
+ * @ORM\Entity
+ */
+class SmProjCategories
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="proj_cat_name", type="integer", nullable=false)
+     */
+    private $projCatName;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="proj_cat_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $projCatId;
+
+    /**
+     * @var \ScmsBundle\Entity\SmImages
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmImages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="proj_cat_img_id", referencedColumnName="img_id")
+     * })
+     */
+    private $projCatImg;
+
+
+}
+

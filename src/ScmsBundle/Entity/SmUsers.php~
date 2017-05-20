@@ -1,0 +1,64 @@
+<?php
+
+namespace ScmsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SmUsers
+ *
+ * @ORM\Table(name="sm_users", indexes={@ORM\Index(name="usr_role_id", columns={"usr_role_id"})})
+ * @ORM\Entity
+ */
+class SmUsers
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_name", type="string", length=20, nullable=false)
+     */
+    private $usrName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_secret", type="string", length=20, nullable=false)
+     */
+    private $usrSecret;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_email", type="string", length=20, nullable=false)
+     */
+    private $usrEmail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_recover_code", type="string", length=20, nullable=false)
+     */
+    private $usrRecoverCode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="usr_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $usrId;
+
+    /**
+     * @var \ScmsBundle\Entity\UserRoles
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\UserRoles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="usr_role_id", referencedColumnName="user_role_id")
+     * })
+     */
+    private $usrRole;
+
+
+}
+

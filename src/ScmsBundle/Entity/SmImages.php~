@@ -1,0 +1,64 @@
+<?php
+
+namespace ScmsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SmImages
+ *
+ * @ORM\Table(name="sm_images", indexes={@ORM\Index(name="img_gal_id", columns={"img_gal_id"})})
+ * @ORM\Entity
+ */
+class SmImages
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img_name", type="string", length=20, nullable=false)
+     */
+    private $imgName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img_ext", type="string", length=20, nullable=false)
+     */
+    private $imgExt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="img_category", type="integer", nullable=false)
+     */
+    private $imgCategory;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="img_caption", type="integer", nullable=false)
+     */
+    private $imgCaption;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="img_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $imgId;
+
+    /**
+     * @var \ScmsBundle\Entity\SmGalleries
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmGalleries")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="img_gal_id", referencedColumnName="gallery_id")
+     * })
+     */
+    private $imgGal;
+
+
+}
+

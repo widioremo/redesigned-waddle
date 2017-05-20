@@ -1,0 +1,104 @@
+<?php
+
+namespace ScmsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SmPosts
+ *
+ * @ORM\Table(name="sm_posts", indexes={@ORM\Index(name="post_gallery_id", columns={"post_gallery_id"}), @ORM\Index(name="post_state_id", columns={"post_state_id"}), @ORM\Index(name="post_featured_img_id", columns={"post_featured_img_id"}), @ORM\Index(name="post_cat_id", columns={"post_cat_id"}), @ORM\Index(name="post_type_id", columns={"post_type_id"})})
+ * @ORM\Entity
+ */
+class SmPosts
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="post_title", type="string", length=20, nullable=false)
+     */
+    private $postTitle;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="post_date", type="date", nullable=false)
+     */
+    private $postDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="post_text", type="text", length=65535, nullable=false)
+     */
+    private $postText;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="post_slug", type="string", length=20, nullable=false)
+     */
+    private $postSlug;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="post_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $postId;
+
+    /**
+     * @var \ScmsBundle\Entity\SmPostCategories
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmPostCategories")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="post_cat_id", referencedColumnName="post_cat_id")
+     * })
+     */
+    private $postCat;
+
+    /**
+     * @var \ScmsBundle\Entity\SmImages
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmImages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="post_featured_img_id", referencedColumnName="img_id")
+     * })
+     */
+    private $postFeaturedImg;
+
+    /**
+     * @var \ScmsBundle\Entity\SmGalleries
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmGalleries")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="post_gallery_id", referencedColumnName="gallery_id")
+     * })
+     */
+    private $postGallery;
+
+    /**
+     * @var \ScmsBundle\Entity\SmStates
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmStates")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="post_state_id", referencedColumnName="state_id")
+     * })
+     */
+    private $postState;
+
+    /**
+     * @var \ScmsBundle\Entity\PostTypes
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\PostTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="post_type_id", referencedColumnName="post_type_id")
+     * })
+     */
+    private $postType;
+
+
+}
+

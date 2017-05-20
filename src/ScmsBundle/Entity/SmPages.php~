@@ -1,0 +1,77 @@
+<?php
+
+namespace ScmsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SmPages
+ *
+ * @ORM\Table(name="sm_pages", indexes={@ORM\Index(name="page_state", columns={"page_state_id"}), @ORM\Index(name="page_featured_img_id", columns={"page_featured_img_id"}), @ORM\Index(name="page_template_id", columns={"page_template_id"})})
+ * @ORM\Entity
+ */
+class SmPages
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="page_title", type="string", length=20, nullable=false)
+     */
+    private $pageTitle;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="page_create_date", type="date", nullable=false)
+     */
+    private $pageCreateDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="page_text", type="text", length=65535, nullable=false)
+     */
+    private $pageText;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="page_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pageId;
+
+    /**
+     * @var \ScmsBundle\Entity\SmStates
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmStates")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="page_state_id", referencedColumnName="state_id")
+     * })
+     */
+    private $pageState;
+
+    /**
+     * @var \ScmsBundle\Entity\SmImages
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmImages")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="page_featured_img_id", referencedColumnName="img_id")
+     * })
+     */
+    private $pageFeaturedImg;
+
+    /**
+     * @var \ScmsBundle\Entity\SmTemplates
+     *
+     * @ORM\ManyToOne(targetEntity="ScmsBundle\Entity\SmTemplates")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="page_template_id", referencedColumnName="template_id")
+     * })
+     */
+    private $pageTemplate;
+
+
+}
+

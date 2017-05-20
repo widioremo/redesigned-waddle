@@ -1,0 +1,33 @@
+<?php
+
+namespace ScmsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PostTypes
+ *
+ * @ORM\Table(name="post_types")
+ * @ORM\Entity
+ */
+class PostTypes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="post_type_name", type="integer", nullable=false)
+     */
+    private $postTypeName;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="post_type_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $postTypeId;
+
+
+}
+
