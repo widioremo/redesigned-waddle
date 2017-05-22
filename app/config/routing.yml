@@ -1,3 +1,6 @@
-app:
-    resource: '@AppBundle/Controller/'
+scms:
+    resource: '@ScmsBundle/Controller/'
     type: annotation
+#app:
+#    resource: '@AppBundle/Controller/'
+#    type: annotation

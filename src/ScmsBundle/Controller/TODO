@@ -1,0 +1,22 @@
+#TODO:
+21st May 2017
+
+
+-create base template for backend
+
+#DashBoard
+-create links to:
+    --New project category
+    --New project
+    --New gallery
+    --Media Upload
+
+#Login Page
+-create login form class
+-create signup form class
+-create sign up form template
+-create login page template
+-create login controller
+    --create new user session
+    --
+-create logout controller

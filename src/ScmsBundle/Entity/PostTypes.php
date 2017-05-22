@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class PostTypes
 {
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="post_type_name", type="integer", nullable=false)
+     * @ORM\Column(name="post_type_name", type="string", nullable=false)
      */
     private $postTypeName;
 

@@ -1,0 +1,25 @@
+{% extends 'dashboard/dashboard.html.twig' %}
+
+{% form_theme form 'dashboard/layouts/forms/bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+    <h2 class="sub-header">{{ page_title }}</h2>
+
+    {#<div>#}
+    {#{% if error %}{{ message }}{% endif %}#}
+    {#{% if success %}   {{ message }} {% endif %}#}
+    {#</div>#}
+
+
+    <div>
+        {{ include('dashboard/includes/top_buttons.html.twig') }}
+
+    </div>
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+
+{% endblock %}

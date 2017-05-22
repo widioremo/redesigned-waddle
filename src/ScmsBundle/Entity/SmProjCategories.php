@@ -3,6 +3,7 @@
 namespace ScmsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * SmProjCategories
@@ -13,9 +14,9 @@ use Doctrine\ORM\Mapping as ORM;
 class SmProjCategories
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="proj_cat_name", type="integer", nullable=false)
+     * @var string
+     * @ORM\Column(name="proj_cat_name", type="string", nullable=false)
+     * @Assert\NotBlank()
      */
     private $projCatName;
 
