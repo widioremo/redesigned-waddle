@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="e8c61a37-e8ae-46b6-a66c-9b7a4013d0db" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/dashboard/media_list.html.twig" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/dashboard/media_upload_form.html.twig" />
@@ -8,12 +9,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ScmsBundle/Controller/MediaManagerController.php" afterPath="$PROJECT_DIR$/src/ScmsBundle/Controller/MediaManagerController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+>>>>>>> 5d99963726c213763c8058980c338592366761bd
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
@@ -603,10 +607,18 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e8c61a37-e8ae-46b6-a66c-9b7a4013d0db" name="Default" comment="" />
+=======
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+>>>>>>> 5d99963726c213763c8058980c338592366761bd
       <created>1494916119808</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494916119808</updated>
+<<<<<<< HEAD
       <workItem from="1494916121941" duration="3469000" />
       <workItem from="1495057688246" duration="1687000" />
       <workItem from="1495106362309" duration="7370000" />
@@ -654,6 +666,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+=======
+    </task>
+    <servers />
+  </component>
+>>>>>>> 5d99963726c213763c8058980c338592366761bd
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -661,6 +678,7 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1074,4 +1092,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> 5d99963726c213763c8058980c338592366761bd
 </project>
