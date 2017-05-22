@@ -52,10 +52,7 @@ class ProjectcategoriesController extends Controller
 
         $repository=$this->getDoctrine()->getRepository('ScmsBundle:SmImages');
         $media_list = $repository->findAll();
-
         return $this->render('dashboard/media_list.html.twig', array('media_list'=>$media_list));
-
-
 
     }
 

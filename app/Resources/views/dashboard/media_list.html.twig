@@ -1,0 +1,43 @@
+{% extends 'dashboard/dashboard.html.twig' %}
+
+{% block body %}
+    <h2 class="sub-header">Project Categories</h2>
+
+    {#<div>#}
+    {#{% if error %}{{ message }}{% endif %}#}
+    {#{% if success %}   {{ message }} {% endif %}#}
+    {#</div>#}
+
+    <div>
+        {{ include('dashboard/includes/top_buttons.html.twig') }}
+
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Media Id</th>
+                <th>Display</th>
+                <th>Media Type</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for media in media_list%}
+                <tr>
+                    <td>{{ media.imgId }}</td>
+                    <td>{{ project_category.imgName }}</td>
+                    <td>{{ project_category.imgExt }}</td>
+                    <td> <span><a href="{{ path('update_project_category',{'project_category_id': project_category.projCatId }) }}" class="btn-xs btn-primary"> Edit</a></span>
+                        <span><a href="{{ path('delete_project_category',{'project_category_id': project_category.projCatId } ) }}" class="btn-xs btn-danger"> Delete</a></span>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
